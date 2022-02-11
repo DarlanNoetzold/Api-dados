@@ -21,8 +21,10 @@ public class Repositorio {
     private String nome;
 
     @NotNull
-    @Email
     private String descr;
+
+    @NotNull
+    private String tecn;
 
     public Long getId() {
         return id;
@@ -46,6 +48,14 @@ public class Repositorio {
 
     public void setDescr(String descr) {
         this.descr = descr;
+    }
+
+    public String getTecn() {
+        return tecn;
+    }
+
+    public void setTecn(String tecn) {
+        this.tecn = tecn;
     }
 
     @Override
