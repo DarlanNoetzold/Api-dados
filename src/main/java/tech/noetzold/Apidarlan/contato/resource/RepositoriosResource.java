@@ -38,13 +38,13 @@ public class RepositoriosResource {
 
     @GetMapping("/{id}")
     public ResponseEntity<Repositorio> buscar(@PathVariable Long id) {
-        Repositorio contato = repositorios.getOne(id);
+        Repositorio repositorio = repositorios.getOne(id);
 
-        if (contato == null) {
+        if (repositorio == null) {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok(contato);
+        return ResponseEntity.ok(repositorio);
     }
 
     @PutMapping("/{id}")
@@ -65,13 +65,13 @@ public class RepositoriosResource {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(@PathVariable Long id) {
-        Repositorio contato = repositorios.getOne(id);
+        Repositorio repositorio = repositorios.getOne(id);
 
-        if (contato == null) {
+        if (repositorio == null) {
             return ResponseEntity.notFound().build();
         }
 
-        repositorios.delete(contato);
+        repositorios.delete(repositorio);
 
         return ResponseEntity.noContent().build();
     }
