@@ -27,8 +27,8 @@ public class RepositoriosResource {
     private Repositorios repositorios;
 
     @PostMapping
-    public Repositorio adicionar(@Valid @RequestBody Repositorio contato) {
-        return repositorios.save(contato);
+    public Repositorio adicionar(@Valid @RequestBody Repositorio repositorio) {
+        return repositorios.save(repositorio);
     }
 
     @GetMapping
@@ -49,14 +49,14 @@ public class RepositoriosResource {
 
     @PutMapping("/{id}")
     public ResponseEntity<Repositorio> atualizar(@PathVariable Long id,
-                                             @Valid @RequestBody Repositorio contato) {
+                                             @Valid @RequestBody Repositorio repositorio) {
         Repositorio existente = repositorios.getOne(id);
 
         if (existente == null) {
             return ResponseEntity.notFound().build();
         }
 
-        BeanUtils.copyProperties(contato, existente, "id");
+        BeanUtils.copyProperties(repositorio, existente, "id");
 
         existente = repositorios.save(existente);
 
