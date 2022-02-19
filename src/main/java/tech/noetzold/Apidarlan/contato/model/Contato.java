@@ -72,6 +72,4 @@ public class Contato {
 			return false;
 		return true;
 	}
-
-
 }

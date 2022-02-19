@@ -72,7 +72,5 @@ public class Habilidade {
             return false;
         return true;
     }
-
-
 }
 
