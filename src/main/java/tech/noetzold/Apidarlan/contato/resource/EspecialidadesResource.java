@@ -10,6 +10,8 @@ import tech.noetzold.Apidarlan.contato.repository.Especialidades;
 import javax.validation.Valid;
 import java.util.List;
 
+@RestController
+@RequestMapping("/especialidades")
 public class EspecialidadesResource {
     @Autowired
     private Especialidades especialidades;

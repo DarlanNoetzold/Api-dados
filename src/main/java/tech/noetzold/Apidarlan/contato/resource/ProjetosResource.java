@@ -10,6 +10,8 @@ import tech.noetzold.Apidarlan.contato.repository.Projetos;
 import javax.validation.Valid;
 import java.util.List;
 
+@RestController
+@RequestMapping("/projetos")
 public class ProjetosResource {
     @Autowired
     private Projetos projetos;

@@ -10,6 +10,8 @@ import tech.noetzold.Apidarlan.contato.repository.Habilidades;
 import javax.validation.Valid;
 import java.util.List;
 
+@RestController
+@RequestMapping("/habilidades")
 public class HabilidadesResource {
     @Autowired
     private Habilidades habilidades;
