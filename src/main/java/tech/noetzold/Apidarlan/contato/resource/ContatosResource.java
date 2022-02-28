@@ -43,7 +43,6 @@ public class ContatosResource {
 		if (contato == null) {
 			return ResponseEntity.notFound().build();
 		}
-		
 		return ResponseEntity.ok(contato);
 	}
 	
