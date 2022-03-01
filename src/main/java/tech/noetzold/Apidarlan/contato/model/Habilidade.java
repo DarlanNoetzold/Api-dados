@@ -21,7 +21,6 @@ public class Habilidade {
     private String nome;
 
     @NotNull
-    @Email
     private String descricao;
 
     public Long getId() {

@@ -20,7 +20,6 @@ public class Certificado {
     private String nome;
 
     @NotNull
-    @Email
     private String descricao;
 
     public Long getId() {

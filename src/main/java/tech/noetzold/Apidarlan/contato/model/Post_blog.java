@@ -20,7 +20,6 @@ public class Post_blog {
     private String nome;
 
     @NotNull
-    @Email
     private String descricao;
 
     public Long getId() {
