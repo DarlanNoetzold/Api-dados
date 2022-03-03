@@ -25,6 +25,12 @@ public class Tecnologia {
     @NotNull
     private String descricao;
 
+    @NotNull
+    private int anoCriacao;
+
+    @NotNull
+    private String criador;
+
     public Long getId() {
         return id;
     }
@@ -55,6 +61,22 @@ public class Tecnologia {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public int getAnoCriacao() {
+        return anoCriacao;
+    }
+
+    public void setAnoCriacao(int anoCriacao) {
+        this.anoCriacao = anoCriacao;
+    }
+
+    public String getCriador() {
+        return criador;
+    }
+
+    public void setCriador(String criador) {
+        this.criador = criador;
     }
 
     @Override
