@@ -24,6 +24,9 @@ public class Especialidade {
     @JoinColumn(name = "tecnologia", nullable = false)
     private Tecnologia tecnologia;
 
+    public Especialidade() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -46,6 +49,14 @@ public class Especialidade {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Tecnologia getTecnologia() {
+        return tecnologia;
+    }
+
+    public void setTecnologia(Tecnologia tecnologia) {
+        this.tecnologia = tecnologia;
     }
 
     @Override

@@ -3,6 +3,7 @@ package tech.noetzold.Apidarlan.contato.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -23,6 +24,9 @@ public class Contato {
 	@NotNull
 	@Email
 	private String email;
+
+	@ManyToOne
+	Formacao formacao;
 
 	public Long getId() {
 		return id;
@@ -46,6 +50,14 @@ public class Contato {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Formacao getFormacao() {
+		return formacao;
+	}
+
+	public void setFormacao(Formacao formacao) {
+		this.formacao = formacao;
 	}
 
 	@Override

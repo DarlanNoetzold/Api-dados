@@ -31,6 +31,9 @@ public class Tecnologia {
     @NotNull
     private String criador;
 
+    public Tecnologia() {
+    }
+
     public Long getId() {
         return id;
     }
