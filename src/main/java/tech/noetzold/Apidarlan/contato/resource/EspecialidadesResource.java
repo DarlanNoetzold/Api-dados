@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.noetzold.Apidarlan.contato.model.Especialidade;
 import tech.noetzold.Apidarlan.contato.repository.Especialidades;
+import tech.noetzold.Apidarlan.contato.repository.Tecnologias;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -16,8 +17,13 @@ public class EspecialidadesResource {
     @Autowired
     private Especialidades especialidades;
 
+    @Autowired
+    private Tecnologias tecnologias;
+
     @PostMapping
     public Especialidade adicionar(@Valid @RequestBody Especialidade especialidade) {
+        especialidade.setTecnologia(tecnologias.findById(especialidade.getTecnologia().getId()).get());
+
         return especialidades.save(especialidade);
     }
 
