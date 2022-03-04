@@ -28,7 +28,7 @@ public class TecnologiasResource {
 
     @GetMapping("/{id}")
     public ResponseEntity<Tecnologia> buscar(@PathVariable Long id) {
-        Tecnologia tecnologia = tecnologias.getOne(id);
+        Tecnologia tecnologia = tecnologias.findById(id).get();
 
         if (tecnologia == null) {
             return ResponseEntity.notFound().build();
