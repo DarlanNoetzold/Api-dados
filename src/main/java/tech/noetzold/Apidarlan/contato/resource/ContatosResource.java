@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tech.noetzold.Apidarlan.contato.model.Contato;
 import tech.noetzold.Apidarlan.contato.repository.Contatos;
+import tech.noetzold.Apidarlan.contato.repository.Formacoes;
 
 @RestController
 @RequestMapping("/contatos")
@@ -25,9 +26,13 @@ public class ContatosResource {
 	
 	@Autowired
 	private Contatos contatos;
+
+	@Autowired
+	private Formacoes formacoes;
 	
 	@PostMapping
 	public Contato adicionar(@Valid @RequestBody Contato contato) {
+		contato.setFormacao(formacoes.findById(contato.getFormacao().getId()).get());
 		return contatos.save(contato);
 	}
 	
