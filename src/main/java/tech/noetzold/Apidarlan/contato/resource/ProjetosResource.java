@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.noetzold.Apidarlan.contato.model.Projeto;
 import tech.noetzold.Apidarlan.contato.repository.Projetos;
+import tech.noetzold.Apidarlan.contato.repository.Tecnologias;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -16,8 +17,12 @@ public class ProjetosResource {
     @Autowired
     private Projetos projetos;
 
+    @Autowired
+    private Tecnologias tecnologias;
+
     @PostMapping
     public Projeto adicionar(@Valid @RequestBody Projeto projeto) {
+        projeto.setTecnologia(tecnologias.findById(projeto.getTecnologia().getId()).get());
         return projetos.save(projeto);
     }
 
