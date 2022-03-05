@@ -2,9 +2,7 @@ package tech.noetzold.Apidarlan.contato.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -21,6 +19,10 @@ public class Projeto {
 
     @NotNull
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "tecnologia", nullable = false)
+    private Tecnologia tecnologia;
 
     public Long getId() {
         return id;
@@ -44,6 +46,14 @@ public class Projeto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Tecnologia getTecnologia() {
+        return tecnologia;
+    }
+
+    public void setTecnologia(Tecnologia tecnologia) {
+        this.tecnologia = tecnologia;
     }
 
     @Override
