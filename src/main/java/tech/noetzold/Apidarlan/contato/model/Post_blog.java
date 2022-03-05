@@ -22,6 +22,9 @@ public class Post_blog {
     @NotNull
     private String descricao;
 
+    @NotNull
+    private Especialidade especialidade;
+
     public Long getId() {
         return id;
     }
@@ -44,6 +47,14 @@ public class Post_blog {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Especialidade getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(Especialidade especialidade) {
+        this.especialidade = especialidade;
     }
 
     @Override
