@@ -28,6 +28,9 @@ public class Contato {
 	@ManyToOne
 	Formacao formacao;
 
+	@ManyToOne
+	Especialidade especialidade;
+
 	public Long getId() {
 		return id;
 	}
@@ -58,6 +61,14 @@ public class Contato {
 
 	public void setFormacao(Formacao formacao) {
 		this.formacao = formacao;
+	}
+
+	public Especialidade getEspecialidade() {
+		return especialidade;
+	}
+
+	public void setEspecialidade(Especialidade especialidade) {
+		this.especialidade = especialidade;
 	}
 
 	@Override
