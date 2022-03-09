@@ -4,7 +4,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tech.noetzold.Apidarlan.contato.model.Especialidade;
 import tech.noetzold.Apidarlan.contato.model.Experiencia;
+import tech.noetzold.Apidarlan.contato.repository.Especialidades;
 import tech.noetzold.Apidarlan.contato.repository.Experiencias;
 
 import javax.validation.Valid;
@@ -17,8 +19,13 @@ public class ExperienciasResource {
     @Autowired
     private Experiencias experiencias;
 
+    @Autowired
+    private Especialidades especialidades;
+
     @PostMapping
     public Experiencia adicionar(@Valid @RequestBody Experiencia experiencia) {
+        experiencia.setEspecialidade(especialidades.findById(experiencia.getEspecialidade().getId()).get());
+
         return experiencias.save(experiencia);
     }
 
