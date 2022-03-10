@@ -24,6 +24,10 @@ public class Especialidade {
     @JoinColumn(name = "tecnologia", nullable = false)
     private Tecnologia tecnologia;
 
+    @ManyToOne
+    @JoinColumn(name = "experiencia", nullable = false)
+    private Experiencia experiencia;
+
     public Especialidade() {
     }
 
@@ -49,6 +53,14 @@ public class Especialidade {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Experiencia getExperiencia() {
+        return experiencia;
+    }
+
+    public void setExperiencia(Experiencia experiencia) {
+        this.experiencia = experiencia;
     }
 
     public Tecnologia getTecnologia() {
