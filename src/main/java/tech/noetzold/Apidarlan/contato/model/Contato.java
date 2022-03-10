@@ -25,6 +25,9 @@ public class Contato {
 	@Email
 	private String email;
 
+	@NotNull
+	private String endereco;
+
 	@ManyToOne
 	Formacao formacao;
 
@@ -69,6 +72,14 @@ public class Contato {
 
 	public void setEspecialidade(Especialidade especialidade) {
 		this.especialidade = especialidade;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	@Override
