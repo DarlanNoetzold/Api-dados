@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 public class Certificado {
@@ -21,6 +22,9 @@ public class Certificado {
 
     @NotNull
     private String descricao;
+
+    @NotNull
+    private Date dataEmissão;
 
     public Long getId() {
         return id;
@@ -44,6 +48,14 @@ public class Certificado {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Date getDataEmissão() {
+        return dataEmissão;
+    }
+
+    public void setDataEmissão(Date dataEmissão) {
+        this.dataEmissão = dataEmissão;
     }
 
     @Override
