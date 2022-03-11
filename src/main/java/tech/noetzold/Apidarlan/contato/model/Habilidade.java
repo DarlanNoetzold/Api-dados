@@ -23,6 +23,9 @@ public class Habilidade {
     @NotNull
     private String descricao;
 
+    @NotNull
+    private Tecnologia tecnologia;
+
     public Long getId() {
         return id;
     }
@@ -45,6 +48,14 @@ public class Habilidade {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Tecnologia getTecnologia() {
+        return tecnologia;
+    }
+
+    public void setTecnologia(Tecnologia tecnologia) {
+        this.tecnologia = tecnologia;
     }
 
     @Override
