@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.noetzold.Apidarlan.contato.model.Habilidade;
+import tech.noetzold.Apidarlan.contato.model.Tecnologia;
 import tech.noetzold.Apidarlan.contato.repository.Habilidades;
+import tech.noetzold.Apidarlan.contato.repository.Tecnologias;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -16,8 +18,13 @@ public class HabilidadesResource {
     @Autowired
     private Habilidades habilidades;
 
+    @Autowired
+    private Tecnologias tecnologias;
+
     @PostMapping
     public Habilidade adicionar(@Valid @RequestBody Habilidade habilidade) {
+        habilidade.setTecnologia(tecnologias.findById(habilidade.getTecnologia().getId()).get());
+
         return habilidades.save(habilidade);
     }
 
