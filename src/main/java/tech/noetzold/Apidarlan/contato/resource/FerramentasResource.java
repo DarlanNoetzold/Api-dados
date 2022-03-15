@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.noetzold.Apidarlan.contato.model.Ferramenta;
 import tech.noetzold.Apidarlan.contato.repository.Ferramentas;
+import tech.noetzold.Apidarlan.contato.repository.Tecnologias;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -14,8 +15,13 @@ public class FerramentasResource {
     @Autowired
     private Ferramentas ferramentas;
 
+    @Autowired
+    private Tecnologias tecnologias;
+
     @PostMapping
     public Ferramenta adicionar(@Valid @RequestBody Ferramenta ferramenta) {
+        ferramenta.setTecnologia(tecnologias.findById(ferramenta.getTecnologia().getId()).get());
+
         return ferramentas.save(ferramenta);
     }
 
