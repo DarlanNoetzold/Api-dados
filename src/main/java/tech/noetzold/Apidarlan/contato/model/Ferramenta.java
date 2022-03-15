@@ -21,6 +21,16 @@ public class Ferramenta {
 
     private String empresa;
 
+    private Tecnologia tecnologia;
+
+    public Tecnologia getTecnologia() {
+        return tecnologia;
+    }
+
+    public void setTecnologia(Tecnologia tecnologia) {
+        this.tecnologia = tecnologia;
+    }
+
     public Long getId() {
         return id;
     }
