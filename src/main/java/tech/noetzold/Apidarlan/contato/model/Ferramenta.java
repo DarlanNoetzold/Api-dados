@@ -19,7 +19,7 @@ public class Ferramenta {
     @NotNull
     private String descricao;
 
-    private String empresa;
+    private String empresaMantenedoura;
 
     private Tecnologia tecnologia;
 
@@ -55,12 +55,12 @@ public class Ferramenta {
         this.descricao = descricao;
     }
 
-    public String getEmpresa() {
-        return empresa;
+    public String getEmpresaMantenedoura() {
+        return empresaMantenedoura;
     }
 
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
+    public void setEmpresaMantenedoura(String empresaMantenedoura) {
+        this.empresaMantenedoura = empresaMantenedoura;
     }
 
     @Override
