@@ -26,6 +26,10 @@ public class Habilidade {
     @NotNull
     private Tecnologia tecnologia;
 
+    private String nivel;
+
+    private Experiencia experiencia;
+
     public Long getId() {
         return id;
     }
@@ -50,12 +54,28 @@ public class Habilidade {
         this.descricao = descricao;
     }
 
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
     public Tecnologia getTecnologia() {
         return tecnologia;
     }
 
     public void setTecnologia(Tecnologia tecnologia) {
         this.tecnologia = tecnologia;
+    }
+
+    public Experiencia getExperiencia() {
+        return experiencia;
+    }
+
+    public void setExperiencia(Experiencia experiencia) {
+        this.experiencia = experiencia;
     }
 
     @Override
