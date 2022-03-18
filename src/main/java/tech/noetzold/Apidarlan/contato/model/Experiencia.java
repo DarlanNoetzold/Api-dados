@@ -23,10 +23,6 @@ public class Experiencia {
 
         private int tempoMeses;
 
-        @NotNull
-        @Email
-        private String email;
-
         @ManyToOne
         Especialidade especialidade;
 
@@ -45,15 +41,6 @@ public class Experiencia {
         public void setNome(String nome) {
             this.nome = nome;
         }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
 
         public Especialidade getEspecialidade() {
             return especialidade;
