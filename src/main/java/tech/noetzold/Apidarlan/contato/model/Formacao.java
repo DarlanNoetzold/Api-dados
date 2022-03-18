@@ -22,6 +22,10 @@ public class Formacao {
     @NotNull
     private String descricao;
 
+    private String anoInicio;
+
+    private String anoFim;
+
     public Long getId() {
         return id;
     }
@@ -44,6 +48,22 @@ public class Formacao {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getAnoInicio() {
+        return anoInicio;
+    }
+
+    public void setAnoInicio(String anoInicio) {
+        this.anoInicio = anoInicio;
+    }
+
+    public String getAnoFim() {
+        return anoFim;
+    }
+
+    public void setAnoFim(String anoFim) {
+        this.anoFim = anoFim;
     }
 
     @Override
