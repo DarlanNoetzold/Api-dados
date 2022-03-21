@@ -20,6 +20,8 @@ public class Projeto {
     @NotNull
     private String descricao;
 
+    private String Status;
+
     @ManyToOne
     @JoinColumn(name = "tecnologia", nullable = false)
     private Tecnologia tecnologia;
@@ -54,6 +56,14 @@ public class Projeto {
 
     public void setTecnologia(Tecnologia tecnologia) {
         this.tecnologia = tecnologia;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
     }
 
     @Override
