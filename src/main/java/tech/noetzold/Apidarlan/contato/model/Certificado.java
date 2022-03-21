@@ -26,6 +26,16 @@ public class Certificado {
     @NotNull
     private Date dataEmissão;
 
+    private String empresaEmissora;
+
+    public String getEmpresaEmissora() {
+        return empresaEmissora;
+    }
+
+    public void setEmpresaEmissora(String empresaEmissora) {
+        this.empresaEmissora = empresaEmissora;
+    }
+
     public Long getId() {
         return id;
     }
