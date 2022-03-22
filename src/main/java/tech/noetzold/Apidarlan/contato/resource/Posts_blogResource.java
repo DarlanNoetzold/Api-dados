@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.noetzold.Apidarlan.contato.model.Post_blog;
+import tech.noetzold.Apidarlan.contato.repository.Contatos;
 import tech.noetzold.Apidarlan.contato.repository.Especialidades;
 import tech.noetzold.Apidarlan.contato.repository.Posts_blog;
 
@@ -20,8 +21,12 @@ public class Posts_blogResource {
     @Autowired
     private Especialidades especialidades;
 
+    @Autowired
+    private Contatos autor;
+
     @PostMapping
     public Post_blog adicionar(@Valid @RequestBody Post_blog post_blog) {
+        post_blog.setAutor(autor.findById(post_blog.getAutor().getId()).get());
         post_blog.setEspecialidade(especialidades.findById(post_blog.getEspecialidade().getId()).get());
         return posts_blog.save(post_blog);
     }
