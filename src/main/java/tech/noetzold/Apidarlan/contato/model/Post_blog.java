@@ -25,6 +25,17 @@ public class Post_blog {
     @NotNull
     private Especialidade especialidade;
 
+    @NotNull
+    private Contato autor;
+
+    public Contato getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Contato autor) {
+        this.autor = autor;
+    }
+
     public Long getId() {
         return id;
     }
