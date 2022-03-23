@@ -28,6 +28,8 @@ public class Contato {
 	@NotNull
 	private String endereco;
 
+	private String numeroCelular;
+
 	@ManyToOne
 	Formacao formacao;
 
@@ -48,6 +50,14 @@ public class Contato {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getNumeroCelular() {
+		return numeroCelular;
+	}
+
+	public void setNumeroCelular(String numeroCelular) {
+		this.numeroCelular = numeroCelular;
 	}
 
 	public String getEmail() {
