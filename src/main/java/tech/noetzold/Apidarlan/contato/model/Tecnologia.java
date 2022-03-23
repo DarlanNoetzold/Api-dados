@@ -31,6 +31,9 @@ public class Tecnologia {
     @NotNull
     private String criador;
 
+    @NotNull
+    private TiposDeTecnologia tiposDeTecnologia;
+
     public Tecnologia() {
     }
 
@@ -40,6 +43,14 @@ public class Tecnologia {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public TiposDeTecnologia getTiposDeTecnologia() {
+        return tiposDeTecnologia;
+    }
+
+    public void setTiposDeTecnologia(TiposDeTecnologia tiposDeTecnologia) {
+        this.tiposDeTecnologia = tiposDeTecnologia;
     }
 
     public String getNome() {
