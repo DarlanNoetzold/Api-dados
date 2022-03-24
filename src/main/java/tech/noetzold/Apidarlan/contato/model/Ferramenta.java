@@ -23,6 +23,9 @@ public class Ferramenta {
 
     private Tecnologia tecnologia;
 
+    @NotNull
+    private TiposDeTecnologia tiposDeTecnologia;
+
     public Tecnologia getTecnologia() {
         return tecnologia;
     }
@@ -61,6 +64,14 @@ public class Ferramenta {
 
     public void setEmpresaMantenedoura(String empresaMantenedoura) {
         this.empresaMantenedoura = empresaMantenedoura;
+    }
+
+    public TiposDeTecnologia getTiposDeTecnologia() {
+        return tiposDeTecnologia;
+    }
+
+    public void setTiposDeTecnologia(TiposDeTecnologia tiposDeTecnologia) {
+        this.tiposDeTecnologia = tiposDeTecnologia;
     }
 
     @Override
