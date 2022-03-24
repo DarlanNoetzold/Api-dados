@@ -26,6 +26,9 @@ public class Experiencia {
         @ManyToOne
         Especialidade especialidade;
 
+        @NotNull
+        private TiposDeTecnologia tiposDeTecnologia;
+
         public Long getId() {
             return id;
         }
@@ -58,7 +61,15 @@ public class Experiencia {
             this.tempoMeses = tempoMeses;
         }
 
-        @Override
+    public TiposDeTecnologia getTiposDeTecnologia() {
+        return tiposDeTecnologia;
+    }
+
+    public void setTiposDeTecnologia(TiposDeTecnologia tiposDeTecnologia) {
+        this.tiposDeTecnologia = tiposDeTecnologia;
+    }
+
+    @Override
         public int hashCode() {
             final int prime = 31;
             int result = 1;
