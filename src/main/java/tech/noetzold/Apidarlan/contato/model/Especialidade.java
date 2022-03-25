@@ -20,6 +20,9 @@ public class Especialidade {
     @NotNull
     private String descricao;
 
+    @NotNull
+    private String nivel;
+
     @ManyToOne
     @JoinColumn(name = "tecnologia", nullable = false)
     private Tecnologia tecnologia;
@@ -45,6 +48,14 @@ public class Especialidade {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
     public String getDescricao() {
