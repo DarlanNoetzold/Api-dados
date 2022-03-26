@@ -22,6 +22,8 @@ public class Projeto {
 
     private String Status;
 
+    private boolean openSource;
+
     @ManyToOne
     @JoinColumn(name = "tecnologia", nullable = false)
     private Tecnologia tecnologia;
@@ -56,6 +58,14 @@ public class Projeto {
 
     public void setTecnologia(Tecnologia tecnologia) {
         this.tecnologia = tecnologia;
+    }
+
+    public boolean isOpenSource() {
+        return openSource;
+    }
+
+    public void setOpenSource(boolean openSource) {
+        this.openSource = openSource;
     }
 
     public String getStatus() {
