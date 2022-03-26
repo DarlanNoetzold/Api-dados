@@ -30,6 +30,12 @@ public class Contato {
 
 	private String numeroCelular;
 
+	private String github;
+
+	private String linkedin;
+
+	private String website;
+
 	@ManyToOne
 	Formacao formacao;
 
@@ -90,6 +96,30 @@ public class Contato {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+
+	public String getGithub() {
+		return github;
+	}
+
+	public void setGithub(String github) {
+		this.github = github;
+	}
+
+	public String getLinkedin() {
+		return linkedin;
+	}
+
+	public void setLinkedin(String linkedin) {
+		this.linkedin = linkedin;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+
+	public void setWebsite(String website) {
+		this.website = website;
 	}
 
 	@Override
