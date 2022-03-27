@@ -24,6 +24,8 @@ public class Projeto {
 
     private boolean openSource;
 
+    private String linkDoc;
+
     @ManyToOne
     @JoinColumn(name = "tecnologia", nullable = false)
     private Tecnologia tecnologia;
@@ -66,6 +68,14 @@ public class Projeto {
 
     public void setOpenSource(boolean openSource) {
         this.openSource = openSource;
+    }
+
+    public String getLinkDoc() {
+        return linkDoc;
+    }
+
+    public void setLinkDoc(String linkDoc) {
+        this.linkDoc = linkDoc;
     }
 
     public String getStatus() {
